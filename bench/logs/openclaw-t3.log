@@ -1,0 +1,3 @@
+[session-sqlite] slow SQLite reclamation Worker operation pid=6616 threadId=0 isMainThread=true reclamationKind=maintenance-plan workerThreadId=8 elapsedMs=11560 outcome=resolved
+[agent/embedded] tool-search: cataloged 39 tools behind compact prompt surface
+[agent/embedded] [trace:embedded-run] prep stages: runId=2d80c706-1b53-4610-8877-b4bfd6a62969 sessionId=2d80c706-1b53-4610-8877-b4bfd6a62969 phase=stream-ready pid=6616 threadId=0 isMainThread=true totalMs=10288 stages=workspace-sandbox:8ms@8ms,skills:9ms@17ms,core-plugin-tools:352ms@369ms,bootstrap-context:57ms@426ms,bundle-tools:1048ms@1478ms,tool-catalog:51ms@1545ms,tool-preparation:1120ms@1546ms,system-prompt:57ms@1603ms,session-resource-loader:195ms@1798ms,agent-session:8270ms@10068ms,stream-setup:220ms@10288ms
