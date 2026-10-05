@@ -1,0 +1,13 @@
+  · engine 'research': research 'vector database': 19 candidates -> dbs.md
+  · verification: PASS []
+
+mission 20261006-154900-8adf04: PASSED  (replans: 0)
+  [✓] file dbs.md exists — dbs.md ok
+  [✓] at least 10 entries — 19/10 items
+  [✓] no duplicate entries — 0 duplicate(s)
+  [✓] every url resolves (no fabricated links) — 12/12 resolve
+  [✓] every entry cites a retrieved source — 0 item(s) with missing/unretrieved source
+  [✓] every item is grounded in the page it cites — 19 item(s) grounded or engine-derived
+  [✓] dbs.md has at least 10 lines with a URL — 19/10 matching lines
+  [✓] dbs.md has no duplicate entries — 0 duplicate(s) across 19 lines
+  artifact: .agent/missions/20261006-154900-8adf04/artifact.json

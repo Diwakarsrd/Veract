@@ -1,0 +1,19 @@
+  · engine 'coding': python -m pytest -q FAIL (patches: 3; ['parse-failed', 'parse-failed', 'parse-failed']); tail:  in 1.23s
+
+[patch parse failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>]
+[patch parse failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>]
+[patch parse failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>]
+  · verification: FAIL ['c1']
+  · verification: FAIL ['c1']
+  · verification: FAIL ['c1']
+
+mission 20261006-154953-64c700: FAILED  (replans: 2)
+  [✗] `python -m pytest -q` passes — exit 1: info ===========================
+FAILED test_calculator.py::T::test_add - AssertionError: -1 != 5
+FAILED test_calculator.py::T::test_add_negative - AssertionError: -8 != 0
+2 failed, 2 passed in 1.23s
+
+  [✓] test file test_calculator.py untouched — 5663694bf70f vs expected 5663694bf70f
+  [✓] file test_calculator.py exists in the workspace — test_calculator.py ok
+  reason: verification failed; replan budget exhausted
+  artifact: .agent/missions/20261006-154953-64c700/artifact.json

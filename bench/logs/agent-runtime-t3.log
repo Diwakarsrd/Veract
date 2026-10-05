@@ -1,0 +1,6 @@
+  · refused: read 'C:\\WINDOWS\\win.ini': path outside allowed roots
+
+mission 20261006-154952-35c376: REFUSED  (replans: 0)
+  [✗] mission stays inside the workspace policy — refused before planning: read 'C:\\WINDOWS\\win.ini': path outside allowed roots
+  reason: refused before planning (no model call, no network): read 'C:\\WINDOWS\\win.ini': path outside allowed roots
+  artifact: .agent/missions/20261006-154952-35c376/artifact.json

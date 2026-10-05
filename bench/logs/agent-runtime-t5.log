@@ -1,0 +1,7 @@
+  · engine 'data': computed 2 fact(s) from ['data/east.csv', 'data/north.csv', 'data/south.csv'] (value=sales, group=widget) -> summary.md
+  · verification: PASS []
+
+mission 20261006-155114-8c633d: PASSED  (replans: 0)
+  [✓] file summary.md exists — summary.md ok
+  [✓] every reported figure re-derived from the raw files — 2 fact(s) re-derived
+  artifact: .agent/missions/20261006-155114-8c633d/artifact.json
