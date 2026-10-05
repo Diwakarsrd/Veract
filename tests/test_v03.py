@@ -21,7 +21,7 @@ from agent_runtime.tools import ToolContext, run_command
 class Base(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
-        # cleanup scheduled in tearDown
+        self.addCleanup(self._cleanup_tmp)
         self.ws = Path(self.tmp.name)
         self._sb, self._se = dict(tools_mod.SANDBOX), dict(tools_mod.SEARCH)
 
