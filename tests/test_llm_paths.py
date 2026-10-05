@@ -78,7 +78,7 @@ class T1(unittest.TestCase):
 
     def test_end_to_end_with_llm_real_http_and_hallucination_filter(self):
         llm = Scripted(self.base)
-        rt = Runtime(self.ws, llm=llm, tools=self.registry(), policy={"block_private_net": False}, base_delay=0, # default engine mode)
+        rt = Runtime(self.ws, llm=llm, tools=self.registry(), policy={"block_private_net": False}, base_delay=0, use_engines=False)
         s = rt.start("Find 3 AI companies")
         self.assertEqual(s.status, "passed", s.log)
         vals = [i["value"] for i in json.loads((rt.store.dir(s.mission.id) / "artifact.json").read_text())["items"]]
@@ -88,7 +88,7 @@ class T1(unittest.TestCase):
         self.assertEqual(s.plan.get("c").status, "done")
 
     def test_private_net_blocked_by_default(self):
-        rt = Runtime(self.ws, llm=Scripted(self.base), tools=self.registry(), base_delay=0, max_replans=0, # default engine mode)
+        rt = Runtime(self.ws, llm=Scripted(self.base), tools=self.registry(), base_delay=0, max_replans=0, use_engines=False)
         s = rt.start("Find 3 AI companies")
         self.assertEqual(s.status, "failed")
         self.assertIn("needs human", s.log[-1]["msg"])
