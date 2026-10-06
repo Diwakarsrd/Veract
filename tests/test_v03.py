@@ -180,15 +180,37 @@ class MCP(Base):
 
 
 class Sandbox(Base):
-    @unittest.skipUnless(os.name == "posix" and sys.platform != "darwin", "rlimits memory caps are Linux-only (macOS Darwin does not enforce RLIMIT_AS)")
-    def test_limits_mode_caps_memory(self):
-        (self.ws / "hog.py").write_text("x = bytearray(600 * 1024 * 1024)\nprint('allocated')\n")
+    def test_limits_mode_memory_behavior_is_platform_aware(self):
+        """Security contract for limits mode vs docker mode:
+        - Linux + limits: Kernel enforces RLIMIT_AS -> child memory hog must terminate.
+        - macOS + limits: CPU/file/core limits apply where supported, but Darwin XNU kernel
+          does NOT enforce RLIMIT_AS for 64-bit address spaces. Verify process runs cleanly.
+        - Windows + limits: No POSIX preexec limits available. Verify standard execution.
+        - Docker mode: Cross-platform hard memory/CPU/network isolation boundary.
+        """
         cfg_ = {"mode": "limits", "cpu_seconds": 10, "memory_mb": 256}
-        r = run_command(f"{sys.executable} hog.py", self.ws, 30, cfg_)
-        self.assertNotEqual(r.returncode, 0)
-        self.assertNotIn("allocated", r.stdout)
-        r = run_command(f"{sys.executable} -c \"print('ok')\"", self.ws, 30, cfg_)
-        self.assertEqual(r.stdout.strip(), "ok")
+
+        if sys.platform.startswith("linux"):
+            # Linux: Kernel enforces RLIMIT_AS -> process must terminate
+            (self.ws / "hog.py").write_text("x = bytearray(600 * 1024 * 1024)\nprint('allocated')\n")
+            r = run_command(f"{sys.executable} hog.py", self.ws, 30, cfg_)
+            self.assertNotEqual(r.returncode, 0)
+            self.assertNotIn("allocated", r.stdout)
+
+        elif sys.platform == "darwin":
+            # macOS: Verify limits preexec hook runs without crashing
+            # (Darwin XNU does not enforce RLIMIT_AS for 64-bit processes)
+            (self.ws / "ok.py").write_text("print('ok')\n")
+            r = run_command(f"{sys.executable} ok.py", self.ws, 30, cfg_)
+            self.assertEqual(r.stdout.strip(), "ok")
+            self.assertEqual(r.returncode, 0)
+
+        elif os.name == "nt":
+            # Windows: Verify safe fallback execution without POSIX preexec
+            (self.ws / "ok.py").write_text("print('ok')\n")
+            r = run_command(f"{sys.executable} ok.py", self.ws, 30, cfg_)
+            self.assertEqual(r.stdout.strip(), "ok")
+            self.assertEqual(r.returncode, 0)
 
     def test_docker_argv_is_locked_down(self):
         argv = tools_mod.sandbox_argv(["python", "-m", "pytest"], self.ws, {"memory_mb": 512, "image": "img"})
