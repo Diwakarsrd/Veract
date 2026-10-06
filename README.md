@@ -62,12 +62,12 @@ Veract optimizes for **proving the answer is correct**.
 
 ## What Veract Can Do
 
-- **🔎 Research** — Search candidate pages, fetch sources, extract grounded entities, verify live registry URLs, and format citations.
-- **💻 Coding** — Run tests, isolate failures, patch files with exact-once verification, re-test, and rollback if tests degrade.
-- **📊 Data Extraction** — Ingest structured files (CSV, JSON), calculate aggregations, validate anomalies, and verify against truth data.
-- **🔐 Security Guardrails** — Prevent prompt injection, block out-of-workspace file traversal, deny private IP SSRF, and redact credentials.
-- **♻️ Self-Healing Recovery** — Classify failures into transient, permission, syntax, or logic errors and apply deterministic fixes before replanning.
-- **🧠 Long-Term Memory** — Store verified facts with provenance tags, confidence scores, and automatic contradiction invalidation.
+- **Research** — Search candidate pages, fetch sources, extract grounded entities, verify live registry URLs, and format citations.
+- **Coding** — Run tests, isolate failures, patch files with exact-once verification, re-test, and rollback if tests degrade.
+- **Data Extraction** — Ingest structured files (CSV, JSON), calculate aggregations, validate anomalies, and verify against truth data.
+- **Security Guardrails** — Prevent prompt injection, block out-of-workspace file traversal, deny private IP SSRF, and redact credentials.
+- **Self-Healing Recovery** — Classify failures into transient, permission, syntax, or logic errors and apply deterministic fixes before replanning.
+- **Long-Term Memory** — Store verified facts with provenance tags, confidence scores, and automatic contradiction invalidation.
 
 ---
 
