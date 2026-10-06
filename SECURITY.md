@@ -1,7 +1,7 @@
 # Security
 
 ## Reporting
-Report vulnerabilities privately to **gsunilkumar6018@gmail.com** with "agent-runtime security" in the subject.
+Report vulnerabilities privately to **diwakarsrd28@gmail.com** with "veract security" in the subject.
 Please include the mission text, policy file and `agent audit <id>` output. Expect a reply within 7 days.
 Do not open public issues for exploitable bugs.
 

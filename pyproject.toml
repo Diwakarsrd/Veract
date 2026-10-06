@@ -1,11 +1,11 @@
 [project]
 name = "veract"
-version = "0.3.0"
+version = "0.3.1"
 description = "Local-first verifiable agent runtime with contract floors and zero dependencies."
 requires-python = ">=3.10"
 license = {text = "MIT"}
 readme = "README.md"
-authors = [{name = "G Sunil Kumar"}, {name = "Divakar"}]
+authors = [{name = "Diwakar", email = "diwakarsrd28@gmail.com"}]
 keywords = ["veract", "agent", "llm", "local-first", "verification", "ollama", "mcp"]
 classifiers = [
     "Development Status :: 4 - Beta",
