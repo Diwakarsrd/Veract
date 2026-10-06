@@ -8,6 +8,14 @@ from .scaffold import create_tool, publish_tool
 from .tools import trust_plugin
 from . import config as cfg
 
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+
 
 def _rt(a, interactive=False):
     _, rt = cfg.load(a.workspace)
