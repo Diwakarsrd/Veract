@@ -1,0 +1,23 @@
+[project]
+name = "agent-runtime"
+version = "0.3.0"
+description = "A reliable runtime for autonomous agents with verification, memory, and capability control"
+authors = [
+    {name = "G Sunil Kumar", email = "sunil@example.com"},
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "rich>=13.0",
+    "typer>=0.9",
+    "requests>=2.28",
+    "duckduckgo-search>=5.0",
+]
+
+[project.scripts]
+agent = "agent_runtime.cli:app"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
