@@ -1,6 +1,6 @@
 [project]
 name = "veract"
-version = "0.3.1"
+version = "0.3.2"
 description = "Local-first verifiable agent runtime with contract floors and zero dependencies."
 requires-python = ">=3.10"
 license = {text = "MIT"}
