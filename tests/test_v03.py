@@ -180,7 +180,7 @@ class MCP(Base):
 
 
 class Sandbox(Base):
-    @unittest.skipUnless(os.name == "posix", "rlimits are POSIX-only")
+    @unittest.skipUnless(os.name == "posix" and sys.platform != "darwin", "rlimits memory caps are Linux-only (macOS Darwin does not enforce RLIMIT_AS)")
     def test_limits_mode_caps_memory(self):
         (self.ws / "hog.py").write_text("x = bytearray(600 * 1024 * 1024)\nprint('allocated')\n")
         cfg_ = {"mode": "limits", "cpu_seconds": 10, "memory_mb": 256}
