@@ -22,7 +22,8 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/Diwakarsrd/Veract"
+Homepage = "https://verdant-fairy-ecae2c.netlify.app/"
+Repository = "https://github.com/Diwakarsrd/Veract"
 Issues = "https://github.com/Diwakarsrd/Veract/issues"
 
 [project.scripts]

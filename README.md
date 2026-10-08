@@ -7,8 +7,9 @@ An open-source, local-first runtime for autonomous AI agents that **plan, execut
 > *Agents shouldn't decide whether they succeeded.*  
 > *The runtime should prove it.*
 
-[Quick Start](#quick-start) &nbsp;·&nbsp; [Why Veract?](#why-veract) &nbsp;·&nbsp; [Architecture](#architecture) &nbsp;·&nbsp; [Benchmarks](#benchmarks) &nbsp;·&nbsp; [Security](#security-by-default) &nbsp;·&nbsp; [Documentation](#cli-reference)
+[Website](https://verdant-fairy-ecae2c.netlify.app/) &nbsp;·&nbsp; [Quick Start](#quick-start) &nbsp;·&nbsp; [Why Veract?](#why-veract) &nbsp;·&nbsp; [Architecture](#architecture) &nbsp;·&nbsp; [Benchmarks](#benchmarks) &nbsp;·&nbsp; [Security](#security-by-default) &nbsp;·&nbsp; [Documentation](#cli-reference)
 
+[![Website](https://img.shields.io/badge/website-live-3ddc97.svg)](https://verdant-fairy-ecae2c.netlify.app/)
 [![PyPI version](https://img.shields.io/badge/pypi-v0.3.2-blue.svg)](https://pypi.org/project/veract/)
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/)
 [![CI](https://github.com/Diwakarsrd/Veract/actions/workflows/ci.yml/badge.svg)](https://github.com/Diwakarsrd/Veract/actions)
